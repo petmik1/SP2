@@ -6,7 +6,8 @@
   "main": "src/index.js",
   "scripts": {
     "server": "live-server",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "repository": {
     "type": "git",
