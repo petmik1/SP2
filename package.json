@@ -7,7 +7,8 @@
   "scripts": {
     "server": "live-server",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -28,10 +29,16 @@
   "devDependencies": {
     "@compodoc/live-server": "^1.2.3",
     "eslint": "^8.33.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
     "sass": "^1.58.0"
   },
   "dependencies": {
     "bootstrap": "^5.2.3"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
