@@ -5,8 +5,8 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "live-server"
+    "server": "live-server",
+    "lint": "eslint src/**/*.js"
   },
   "repository": {
     "type": "git",
