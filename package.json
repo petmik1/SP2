@@ -1,6 +1,6 @@
 {
   "name": "sp2",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "description": "auction application for semester project",
   "type": "module",
   "main": "src/index.js",
@@ -8,6 +8,7 @@
     "server": "live-server",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
+    "format": "prettier -w src/**/*.js",
     "prepare": "husky install"
   },
   "repository": {
@@ -29,6 +30,8 @@
   "devDependencies": {
     "@compodoc/live-server": "^1.2.3",
     "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.3",
