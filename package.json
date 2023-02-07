@@ -5,7 +5,8 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "server": "live-server",
+    "build": "sass src/scss:dist/css",
+    "start": "concurrently \"sass --watch src/scss:dist/css\" \"live-server\"",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "format": "prettier -w src/**/*.js",
@@ -29,6 +30,7 @@
   "homepage": "https://github.com/petmik1/SP2#readme",
   "devDependencies": {
     "@compodoc/live-server": "^1.2.3",
+    "concurrently": "^7.6.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^17.0.0",
