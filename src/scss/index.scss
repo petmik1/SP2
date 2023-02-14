@@ -1,0 +1,37 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+// colors
+$primary-color: #3a4b5e;
+$secondary-color: #e4e5ed;
+$tertiary-color: #0090f0;
+$CTA-color: #00db33;
+$danger-color: #fa0a01;
+
+// fonts
+@mixin font-primary() {
+  font-family: 'pilsner', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+@mixin font-secondary() {
+  font-family: 'pilsner', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin font-tertiary() {
+  font-family: 'massilia', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+  @include font-primary();
+}
+h2,
+h3,
+h4,
+h5 {
+  @include font-secondary();
+}
+p {
+  @include font-tertiary();
+}
