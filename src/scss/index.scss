@@ -42,7 +42,8 @@ body {
   background-color: $color-secondary;
 }
 
-.navbar {
+.navbar,
+.footer {
   background-color: $color-primary;
 
   * {
@@ -60,8 +61,10 @@ body {
   .navbar-brand {
     width: 75px;
   }
-}
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-  color: $color-secondary;
+  .navbar_bars {
+    font-size: 2em;
+  }
+  .footer_icon {
+    font-size: 1.8em;
+  }
 }
