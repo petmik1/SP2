@@ -1,11 +1,11 @@
 @import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 // colors
-$primary-color: #3a4b5e;
-$secondary-color: #e4e5ed;
-$tertiary-color: #0090f0;
-$CTA-color: #00db33;
-$danger-color: #fa0a01;
+$color-primary: #3a4b5e !default;
+$color-secondary: #e4e5ed !default;
+$color-tertiary: #0090f0 !default;
+$color-CTA: #00db33 !default;
+$color-danger: #fa0a01 !default;
 
 // fonts
 @mixin font-primary() {
@@ -23,15 +23,45 @@ $danger-color: #fa0a01;
   font-weight: 400;
   font-style: normal;
 }
+
 h1 {
   @include font-primary();
 }
 h2,
 h3,
 h4,
-h5 {
+h5,
+a {
   @include font-secondary();
 }
 p {
   @include font-tertiary();
+}
+
+body {
+  background-color: $color-secondary;
+}
+
+.navbar {
+  background-color: $color-primary;
+
+  * {
+    color: $color-secondary !important;
+    border: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+  }
+  .nav-item:hover {
+    opacity: 80%;
+  }
+  .active {
+    text-decoration: underline;
+  }
+  .navbar-brand {
+    width: 75px;
+  }
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: $color-secondary;
 }

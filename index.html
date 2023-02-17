@@ -11,13 +11,17 @@
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
+    <script
+      src="https://kit.fontawesome.com/321709e282.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./src/js/index.js" defer type="module"></script>
     <title>BBB - HOME</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg flex-lg-column-reverse">
+      <div class="container-fluid d-flex">
+        <img class="navbar-brand" src="assets/img/logoSP2.png" alt="" />
         <button
           class="navbar-toggler"
           type="button"
@@ -27,18 +31,23 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i class="fa-sharp fa-solid fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div
+          class="collapse navbar-collapse flex-grow-1 text-right"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-auto flex-nowrap">
             <li class="nav-item text-center">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a href="#" class="nav-link active">Home</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link" href="#">login</a>
+              <a href="#" class="nav-link">login</a>
             </li>
             <li class="nav-item text-center">
-              <a class="nav-link" href="#">profile</a>
+              <a class="nav-link" href="#"
+                ><i class="fa-solid fa-user m-1"></i>profile</a
+              >
             </li>
           </ul>
         </div>
