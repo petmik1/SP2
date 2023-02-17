@@ -24,6 +24,9 @@ $color-danger: #fa0a01 !default;
   font-style: normal;
 }
 
+* {
+  color: $color-primary;
+}
 h1 {
   @include font-primary();
 }
@@ -67,4 +70,28 @@ body {
   .footer_icon {
     font-size: 1.8em;
   }
+}
+
+.form {
+  max-width: 500px;
+  input {
+    background-color: $color-secondary;
+    border: 1px solid $color-primary;
+  }
+  input:focus {
+    background-color: $color-secondary;
+  }
+  .btn {
+    background-color: $color-CTA;
+    color: $color-primary;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .btn:hover {
+    opacity: 80%;
+  }
+}
+.link {
+  @include font-primary();
+  color: $color-tertiary;
 }

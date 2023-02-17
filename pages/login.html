@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iez2rur.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iez2rur.css" />
+    <script
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/321709e282.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/js/index.js" defer type="module"></script>
+    <title>BBB - login</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg flex-lg-column-reverse">
+      <div class="container-fluid d-flex w-75">
+        <img class="navbar-brand" src="../assets/img/logoSP2.png" alt="" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-sharp fa-solid fa-bars navbar_bars"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse flex-grow-1 text-right"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-auto flex-nowrap">
+            <li class="nav-item text-center">
+              <a href="../index.html " class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item text-center">
+              <a href="" class="nav-link">login</a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link" href=""
+                ><i class="fa-solid fa-user m-1"></i>profile</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <body>
+      <div class="container w-75 form">
+        <form class="modal-content" id="loginForm">
+          <div class="modal-header mt-3">
+            <h2>login</h2>
+          </div>
+          <div class="modal-body mt-3">
+            <label for="inputEmail" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              pattern="[\w\-.]+@(stud.)?noroff.no$"
+              placeholder="name@example.com"
+              title="Only Noroff student or teacher emails are valid."
+              name="email"
+              id="inputEmail"
+            />
+          </div>
+          <div class="modal-body mt-3">
+            <label for="inputPassword" class="form-label">password</label>
+            <input
+              type="password"
+              minlength="8"
+              placeholder="Password"
+              class="form-control"
+              name="password"
+              id="inputPassword"
+            />
+          </div>
+          <div class="modal-footer mt-3">
+            <button type="submit" class="btn btn-success w-100">login</button>
+            <a href="./register.html" class="link w-100 mt-3"
+              >Dont hava a account? Create on hear.</a
+            >
+          </div>
+        </form>
+      </div>
+    </body>
+    <footer class="footer fixed-bottom d-flex justify-content-center">
+      <i class="fa-brands fa-facebook-f m-2 footer_icon"></i>
+      <i class="fa-solid fa-phone m-2 footer_icon"></i>
+    </footer>
+  </body>
+</html>
