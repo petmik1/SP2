@@ -119,3 +119,34 @@ body {
     cursor: pointer;
   }
 }
+
+// carrousel
+.carousel-inner {
+  height: 200px;
+  overflow: hidden;
+}
+.carousel-image {
+  max-height: 150px;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  color: $color-primary;
+}
+.carousel-item {
+}
+.carousel-caption {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 30px;
+}
+.carousel-caption * {
+  color: $color-primary;
+  border: solid 1px $color-primary;
+  height: 30px;
+  width: 100px;
+}
