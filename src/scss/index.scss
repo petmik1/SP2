@@ -150,3 +150,30 @@ body {
   height: 30px;
   width: 100px;
 }
+// cards
+@media (min-width: 768px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .card {
+      width: 20%;
+      margin: 10px 1em;
+      .card-body {
+        padding: 0;
+        .card-title {
+          padding: 10px;
+          background-color: $color-primary;
+          color: $color-secondary;
+          text-transform: uppercase;
+          font-weight: 900;
+        }
+        .card-text {
+          padding: 10px;
+          background-color: $color-secondary;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
