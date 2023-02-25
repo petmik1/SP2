@@ -132,8 +132,7 @@ body {
 .carousel-control-prev {
   color: $color-primary;
 }
-.carousel-item {
-}
+
 .carousel-caption {
   position: relative;
   top: 0;
@@ -151,6 +150,11 @@ body {
   width: 100px;
 }
 // cards
+.card {
+  background-color: $color-secondary;
+  border: 2px solid $color-primary;
+  margin: 1em 0;
+}
 @media (min-width: 768px) {
   .cards {
     display: flex;
