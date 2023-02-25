@@ -1,11 +1,12 @@
-import { apiPath } from '../constants.js'
 import { headers } from '../headers.js'
-
-export async function register(name, email, password, avatar) {
-  let profile = { name, email, password, avatar }
+import { apiPath } from '../constants.js'
+export async function login(email, password) {
+  console.log(email, password)
+  let profile = { email, password }
   profile = JSON.stringify(profile)
+  console.log(profile)
 
-  const response = await fetch(`${apiPath}auth/register`, {
+  const response = await fetch(`${apiPath}auth/login`, {
     method: 'POST',
     body: profile,
     headers: headers('application/json'),

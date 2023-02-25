@@ -1,14 +1,14 @@
 import { register } from '../api/auth/register.js'
 export async function eventRegister() {
-  console.log('eventRegister')
   const registerForm = document.querySelector('#registerForm')
-  registerForm.addEventListener('submit', (e) => {
+  registerForm.addEventListener('submit', async (e) => {
     e.preventDefault()
-    register(
+    const response = await register(
       registerForm.name.value,
       registerForm.email.value,
       registerForm.password.value,
       registerForm.avatar.value
     )
+    location.href = '/pages/login.html'
   })
 }
