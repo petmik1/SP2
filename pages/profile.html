@@ -62,6 +62,22 @@
       <div
         class="profile container d-flex align-items-center justify-content-center flex-column mt-5"
       >
+        <div id="cogwheel" class="w-25 d-flex justify-content-end">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+        <form id="changeAvatar" class="flex-column form mt-3">
+          <label for="inputAvatar" class="form-label">avatar</label>
+          <input
+            type="url"
+            name="avatar"
+            class="form-control"
+            id="inputAvatar"
+            placeholder="www.validurl.com"
+          />
+          <button type="submit" class="my-3 btn btn btn-success">
+            change avartar
+          </button>
+        </form>
         <div
           class="avatar d-flex justify-content-center align-content-center overflow-hidden"
           id="avatar"

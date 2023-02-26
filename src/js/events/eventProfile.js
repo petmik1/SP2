@@ -10,6 +10,8 @@ const yourBids = document.querySelector('#yourBids')
 const createListingBtn = document.querySelector('#createListingBtn')
 const createPostForm = document.querySelector('#createPost')
 const cards = document.querySelector('.cards')
+const cogwheel = document.querySelector('#cogwheel')
+const changeAvatar = document.querySelector('#changeAvatar')
 console.log(cards)
 
 export async function eventProfile() {
@@ -19,6 +21,10 @@ export async function eventProfile() {
   CardsPosts(result)
 
   // event listeners
+  cogwheel.addEventListener('click', () => {
+    changeAvatar.classList.toggle('d-flex')
+  })
+
   createListingBtn.addEventListener('click', () => {
     createPostForm.classList.toggle('d-flex')
   })
@@ -45,6 +51,7 @@ export async function eventProfile() {
   yourBids.addEventListener('click', async () => {
     cards.innerHTML = ''
     result = await usersBids(user.name)
+    console.log(result)
     CardsPosts(result)
   })
 }

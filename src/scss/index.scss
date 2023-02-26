@@ -124,6 +124,16 @@ body {
     opacity: 80%;
     cursor: pointer;
   }
+  #cogwheel {
+    font-size: 1.5em;
+  }
+  #cogwheel:hover {
+    opacity: 80%;
+    cursor: pointer;
+  }
+  #changeAvatar {
+    display: none;
+  }
 }
 #createPost {
   display: none;
