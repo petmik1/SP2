@@ -88,7 +88,8 @@ body {
     background-color: $color-secondary;
     border: 1px solid $color-primary;
   }
-  input:focus {
+  input:focus,
+  textarea:focus {
     background-color: $color-secondary;
   }
 
