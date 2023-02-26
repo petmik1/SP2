@@ -1,6 +1,6 @@
 import { getPosts } from '../api/posts/getPosts.js'
 import { indexCarruselPosts } from '../render/indexCarruselPosts.js'
-import { indexCardsPosts } from '../render/indexCardsPosts.js'
+import { CardsPosts } from '../render/CardsPosts.js'
 
 export async function eventIndex() {
   // Createing carrusel
@@ -9,5 +9,5 @@ export async function eventIndex() {
 
   // Creating cards
   const cardsData = await getPosts(100, 'created', 'desc', 'false')
-  await indexCardsPosts(cardsData)
+  await CardsPosts(cardsData)
 }

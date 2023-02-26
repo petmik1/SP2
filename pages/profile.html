@@ -62,18 +62,25 @@
       <div
         class="profile container d-flex align-items-center justify-content-center flex-column mt-5"
       >
-        <div class="avatar"></div>
+        <div
+          class="avatar d-flex justify-content-center align-content-center overflow-hidden"
+          id="avatar"
+        ></div>
         <div
           class="d-flex align-items-center justify-content-center flex-column"
         >
-          <h1 class="">name</h1>
-          <h2 class="">credits:1000</h2>
+          <h1 id="name">name</h1>
+          <h2 class="" id="credits">credits:</h2>
         </div>
         <div class="profile_buttons d-flex justify-content-center w-100">
-          <h3 class="mx-3 active">your listings</h3>
-          <h3 class="mx-3">your bids</h3>
+          <div>
+            <h3 class="mx-3 active" id="yourListings">your listings</h3>
+          </div>
+          <div>
+            <h3 class="mx-3" id="yourBids">your bids</h3>
+          </div>
         </div>
-        <div class="api_result"></div>
+        <div class="cards"></div>
       </div>
     </body>
     <footer class="footer fixed-bottom d-flex justify-content-center">

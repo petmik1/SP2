@@ -1,4 +1,4 @@
-export function indexCardsPost(post) {
+export function CardsPost(post) {
   const cards = document.querySelector('.cards')
   const card = document.createElement('div')
   const card_body = document.createElement('div')

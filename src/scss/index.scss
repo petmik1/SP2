@@ -107,7 +107,11 @@ body {
     height: 100px;
     border: 2px solid $color-primary;
     border-radius: 100%;
+    #profileIcon {
+      font-size: 6em;
+    }
   }
+
   .profile_buttons {
     text-transform: uppercase;
     .active {
