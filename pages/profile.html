@@ -58,7 +58,7 @@
         </div>
       </div>
     </nav>
-    <body>
+    <body class="mb-5">
       <div
         class="profile container d-flex align-items-center justify-content-center flex-column mt-5"
       >
@@ -71,6 +71,28 @@
         >
           <h1 id="name">name</h1>
           <h2 class="" id="credits">credits:</h2>
+          <button class="btn form btn-success" id="createListingBtn">
+            create listing
+          </button>
+          <form id="createPost" class="form flex-column">
+            <label for="title" class="form-label">title</label>
+            <input type="text" required class="form-control" name="title" />
+            <label for="description" class="form-label">description</label>
+            <textarea
+              name="description"
+              class="form-control"
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <label for="image" class="form-label">image</label>
+            <input type="url" name="image" class="form-control" id="image" />
+            <label for="endsAt" class="form-label">ends at</label>
+            <input type="datetime-local" class="form-control" name="" id="" />
+            <button type="submit" class="btn btn-success w-100 mt-3">
+              create
+            </button>
+          </form>
         </div>
         <div class="profile_buttons d-flex justify-content-center w-100">
           <div>

@@ -72,25 +72,26 @@ body {
     font-size: 1.8em;
   }
 }
-
+.btn {
+  background-color: $color-CTA;
+  color: $color-primary;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.btn:hover {
+  opacity: 80%;
+}
 .form {
   max-width: 500px;
-  input {
+  input,
+  textarea {
     background-color: $color-secondary;
     border: 1px solid $color-primary;
   }
   input:focus {
     background-color: $color-secondary;
   }
-  .btn {
-    background-color: $color-CTA;
-    color: $color-primary;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-  .btn:hover {
-    opacity: 80%;
-  }
+
   label {
     font-size: 1.3em;
   }
@@ -122,6 +123,9 @@ body {
     opacity: 80%;
     cursor: pointer;
   }
+}
+#createPost {
+  display: none;
 }
 
 // carrousel
