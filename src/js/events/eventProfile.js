@@ -4,6 +4,7 @@ import { usersListings } from '../api/profiles/usersListings.js'
 import { usersBids } from '../api/profiles/userBids.js'
 import { CardsPosts } from '../render/CardsPosts.js'
 import { createPost } from '../api/posts/createPost.js'
+import { changeAvatar } from '../api/profiles/changeAvatar.js'
 
 const yourListings = document.querySelector('#yourListings')
 const yourBids = document.querySelector('#yourBids')
@@ -11,18 +12,25 @@ const createListingBtn = document.querySelector('#createListingBtn')
 const createPostForm = document.querySelector('#createPost')
 const cards = document.querySelector('.cards')
 const cogwheel = document.querySelector('#cogwheel')
-const changeAvatar = document.querySelector('#changeAvatar')
+const formAvatar = document.querySelector('#changeAvatar')
+
+const user = storage.load('user')
 console.log(cards)
 
 export async function eventProfile() {
-  const user = storage.load('user')
   profileUserInfo(user)
   let result = await usersListings(user.name)
   CardsPosts(result)
 
   // event listeners
   cogwheel.addEventListener('click', () => {
-    changeAvatar.classList.toggle('d-flex')
+    formAvatar.classList.toggle('d-flex')
+  })
+  formAvatar.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    result = await changeAvatar(formAvatar.avatar.value, user.name)
+    storage.save('user', result)
+    location.reload()
   })
 
   createListingBtn.addEventListener('click', () => {
