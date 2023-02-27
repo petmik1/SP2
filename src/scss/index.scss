@@ -169,34 +169,43 @@ body {
   width: 100px;
 }
 // cards
+.cards {
+  width: 90%;
+}
 .card {
   background-color: $color-secondary;
   border: 2px solid $color-primary;
   margin: 1em 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
   .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     .card {
-      width: 20%;
-      margin: 10px 1em;
+      width: 21%;
+
       .card-body {
         padding: 0;
         .card-title {
-          padding: 10px;
+          // padding: 10px;
           background-color: $color-primary;
           color: $color-secondary;
           text-transform: uppercase;
           font-weight: 900;
         }
         .card-text {
-          padding: 10px;
+          // padding: 10px;
           background-color: $color-secondary;
           color: $color-primary;
         }
       }
     }
   }
+}
+
+// singlePost
+.leader {
+  text-decoration: underline;
+  font-size: 1.3em;
 }

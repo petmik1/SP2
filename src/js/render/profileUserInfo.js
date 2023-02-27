@@ -1,6 +1,5 @@
 export function profileUserInfo(user) {
   const avatar = document.querySelector('#avatar')
-  console.log(user)
   const name = document.querySelector('#name')
   const credits = document.querySelector('#credits')
   if (user.avatar === null) {

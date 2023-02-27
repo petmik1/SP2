@@ -13,9 +13,7 @@ const createPostForm = document.querySelector('#createPost')
 const cards = document.querySelector('.cards')
 const cogwheel = document.querySelector('#cogwheel')
 const formAvatar = document.querySelector('#changeAvatar')
-
 const user = storage.load('user')
-console.log(cards)
 
 export async function eventProfile() {
   profileUserInfo(user)
@@ -39,14 +37,14 @@ export async function eventProfile() {
 
   createPostForm.addEventListener('submit', async (e) => {
     e.preventDefault()
-    console.log(e.target.endsAt.value)
+
     result = await createPost(
       createPostForm.title.value,
       createPostForm.endsAt.value,
       createPostForm.description.value,
       createPostForm.image.value
     )
-    console.log(result)
+
     location.reload()
   })
 
@@ -59,7 +57,6 @@ export async function eventProfile() {
   yourBids.addEventListener('click', async () => {
     cards.innerHTML = ''
     result = await usersBids(user.name)
-    console.log(result)
     CardsPosts(result)
   })
 }

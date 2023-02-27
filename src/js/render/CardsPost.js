@@ -7,8 +7,8 @@ export function CardsPost(post) {
   const card_footer = document.createElement('div')
   const card_footer_bid = document.createElement('p')
   const card_footer_time = document.createElement('p')
-  const card_footer_button = document.createElement('button')
-  card.classList.add('card', 'container')
+  const card_footer_button = document.createElement('a')
+  card.classList.add('card')
   card_body.classList.add('card-body')
   card_media.classList.add('card-image', 'ratio', 'ratio-16x9')
   card_footer.classList.add(
@@ -23,6 +23,7 @@ export function CardsPost(post) {
   card_footer_bid.innerText = post._count.bids
   card_footer_time.innerText = post.endsAt
   card_footer_button.innerText = 'Bid'
+  card_footer_button.href = `../../../pages/product.html?id=${post.id}`
   card_body.append(card_title, card_media)
   card_footer.append(card_footer_bid, card_footer_time, card_footer_button)
   card.append(card_body, card_footer)

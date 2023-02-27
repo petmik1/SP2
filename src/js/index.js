@@ -2,6 +2,7 @@ import { eventIndex } from './events/eventIndex.js'
 import { eventLogin } from './events/eventLogin.js'
 import { eventRegister } from './events/eventRegister.js'
 import { eventProfile } from './events/eventProfile.js'
+import { eventProduct } from './events/eventProduct.js'
 import storage from './storage/index.js'
 
 switch (location.pathname) {
@@ -16,6 +17,9 @@ switch (location.pathname) {
     break
   case '/pages/profile.html':
     await eventProfile()
+    break
+  case '/pages/product.html':
+    await eventProduct()
     break
   default:
     break
