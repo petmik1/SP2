@@ -57,7 +57,23 @@
       </div>
     </nav>
     <body>
-      <section class="container w-75" id="api_result"></section>
+      <section class="container" id="api_result">
+        <form id="editPost">
+          <label for="title" class="form-label">title</label>
+          <input type="text" required class="form-control" name="title" />
+          <label for="description" class="form-label">description</label>
+          <textarea
+            name="description"
+            class="form-control"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <label for="image" class="form-label">image</label>
+          <input type="url" name="image" class="form-control" id="image" />
+          <button type="submit" class="btn btn-primary w-100 mt-3">edit</button>
+        </form>
+      </section>
     </body>
     <footer class="footer fixed-bottom d-flex justify-content-center">
       <i class="fa-brands fa-facebook-f m-2 footer_icon"></i>

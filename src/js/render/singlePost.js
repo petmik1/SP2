@@ -1,5 +1,8 @@
 import storage from '../storage/index.js'
+import { deletePost } from '../api/posts/deletePost.js'
+import { createEditForm } from './createEditForm.js'
 export function singlePost(post) {
+  console.log(post)
   let bids = post.bids
   bids.sort((a, b) => {
     return a.amount - b.amount
@@ -64,6 +67,18 @@ export function singlePost(post) {
     const deleteButton = document.createElement('button')
     editButton.classList.add('btn', 'btn-primary', 'mx-2')
     deleteButton.classList.add('btn', 'btn-danger', 'mx-2')
+    editButton.setAttribute('id', 'editButton')
+    deleteButton.setAttribute('id', 'deleteButton')
+    editButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      const editForm = createEditForm(post)
+      textDiv.append(editForm)
+    })
+    deleteButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      location.href = 'profile.html'
+      deletePost(post.id)
+    })
     editButton.innerText = 'Edit'
     deleteButton.innerText = 'Delete'
     textDiv.append(editButton, deleteButton)

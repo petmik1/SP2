@@ -217,3 +217,7 @@ body {
   text-decoration: underline;
   font-size: 1.3em;
 }
+#editPost {
+  display: none;
+  flex-direction: column;
+}

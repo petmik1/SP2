@@ -11,7 +11,7 @@ export async function createPost(title, endsAt, description, image) {
     headers: headers('application/json'),
   })
   if (response.ok) {
-    return await response.json()
+    location.href = 'pages/profile.html'
   }
   throw new Error(response.statusText)
 }
