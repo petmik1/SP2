@@ -1,3 +1,4 @@
+import storage from '../storage/index.js'
 export function singlePost(post) {
   let bids = post.bids
   bids.sort((a, b) => {
@@ -12,6 +13,7 @@ export function singlePost(post) {
   const title = document.createElement('h1')
   const description = document.createElement('p')
   const seller = document.createElement('p')
+  const user = storage.load('user')
 
   const bidTitle = document.createElement('h3')
   for (let i = 0; i < post.media.length; i++) {
@@ -34,6 +36,7 @@ export function singlePost(post) {
     bid.innerText = bids[j].bidderName + ': ' + bids[j].amount + 'credits'
     bidsContainer.append(bid)
   }
+
   container.classList.add(
     'd-flex',
     'justify-content-center',
@@ -44,8 +47,10 @@ export function singlePost(post) {
     'd-flex',
     'justify-content-center',
     'flex-column',
-    'flex-md-row'
+    'flex-md-row',
+    'flex-1'
   )
+  imgDiv.classList.add('flex-1')
   bidsContainer.classList.add('mx-auto', 'w-50', 'mt-5', 'text-center')
   bidTitle.innerText = 'Bids'
   title.innerText = post.title
@@ -53,6 +58,33 @@ export function singlePost(post) {
   seller.innerText = 'seller: ' + post.seller.name
   bidsContainer.prepend(bidTitle)
   textDiv.append(title, description, seller)
+  if (post.seller.name === user.name) {
+    console.log('seller')
+    const editButton = document.createElement('button')
+    const deleteButton = document.createElement('button')
+    editButton.classList.add('btn', 'btn-primary', 'mx-2')
+    deleteButton.classList.add('btn', 'btn-danger', 'mx-2')
+    editButton.innerText = 'Edit'
+    deleteButton.innerText = 'Delete'
+    textDiv.append(editButton, deleteButton)
+  } else {
+    const bidButton = document.createElement('button')
+    const bidInput = document.createElement('input')
+    const bidLabel = document.createElement('label')
+    const bidForm = document.createElement('form')
+    bidLabel.innerText = 'Bid:'
+    bidInput.classList.add('form-control', 'mx-auto')
+    bidInput.setAttribute('type', 'number')
+    if (bids.length !== 0) {
+      bidInput.setAttribute('min', bids[0].amount)
+    }
+    console.log(bids[0].amount)
+    bidButton.classList.add('btn', 'btn-primary', 'w-100', 'mt-2')
+    bidButton.innerText = 'Bid'
+    bidForm.setAttribute('id', 'bidForm')
+    bidForm.append(bidLabel, bidInput, bidButton)
+    textDiv.append(bidForm)
+  }
   postInfo.append(imgDiv, textDiv)
   container.append(postInfo, bidsContainer)
 }

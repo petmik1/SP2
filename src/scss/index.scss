@@ -73,10 +73,18 @@ body {
   }
 }
 .btn {
-  background-color: $color-CTA;
   color: $color-primary;
   font-weight: 900;
   text-transform: uppercase;
+}
+.btn-primary {
+  background-color: $color-CTA;
+  border: none;
+}
+.btn-danger {
+  background-color: $color-danger;
+  border: none;
+  color: $color-secondary;
 }
 .btn:hover {
   opacity: 80%;
