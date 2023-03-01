@@ -185,6 +185,11 @@ body {
   border: 2px solid $color-primary;
   margin: 1em 0;
 }
+.card-body {
+  img {
+    height: 150px;
+  }
+}
 @media (min-width: 1000px) {
   .cards {
     display: flex;
