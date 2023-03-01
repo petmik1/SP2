@@ -11,7 +11,7 @@ export async function createPost(title, endsAt, description, image) {
     headers: headers('application/json'),
   })
   if (response.ok) {
-    location.href = 'pages/profile.html'
+    location.reload()
   }
   throw new Error(response.statusText)
 }

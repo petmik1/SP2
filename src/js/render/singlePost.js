@@ -1,6 +1,7 @@
 import storage from '../storage/index.js'
 import { deletePost } from '../api/posts/deletePost.js'
 import { createEditForm } from './createEditForm.js'
+
 export function singlePost(post) {
   console.log(post)
   let bids = post.bids

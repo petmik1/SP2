@@ -9,7 +9,6 @@ export function createEditForm(post) {
     if (post.media.length < 0) {
       form.image.value = post.media[0]
     }
-
     return form
   } else {
     form.style.display = 'none'

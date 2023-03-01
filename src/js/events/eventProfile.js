@@ -35,17 +35,15 @@ export async function eventProfile() {
     createPostForm.classList.toggle('d-flex')
   })
 
-  createPostForm.addEventListener('submit', async (e) => {
-    e.preventDefault()
-
+  createPostForm.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    console.log('submit')
     result = await createPost(
       createPostForm.title.value,
       createPostForm.endsAt.value,
       createPostForm.description.value,
       createPostForm.image.value
     )
-
-    location.reload()
   })
 
   yourListings.addEventListener('click', async () => {
