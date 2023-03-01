@@ -11,7 +11,7 @@ export async function changeAvatar(image, name) {
     headers: headers('application/json'),
   })
   if (response.ok) {
-    storage.save('user', await response)
+    storage.save('user', response)
 
     return await response.json()
   }

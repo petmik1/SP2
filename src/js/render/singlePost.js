@@ -1,6 +1,7 @@
 import storage from '../storage/index.js'
 import { deletePost } from '../api/posts/deletePost.js'
 import { createEditForm } from './createEditForm.js'
+import { addBid } from '../api/posts/addBid.js'
 
 export function singlePost(post) {
   console.log(post)
@@ -91,13 +92,20 @@ export function singlePost(post) {
     bidLabel.innerText = 'Bid:'
     bidInput.classList.add('form-control', 'mx-auto')
     bidInput.setAttribute('type', 'number')
+    bidInput.setAttribute('name', 'bid')
+    bidLabel.setAttribute('for', 'bid')
     if (bids.length !== 0) {
-      bidInput.setAttribute('min', bids[0].amount)
+      bidInput.setAttribute('min', bids[0].amount + 1)
+      bidInput.value = bids[0].amount + 1
     }
-    console.log(bids[0].amount)
+
     bidButton.classList.add('btn', 'btn-primary', 'w-100', 'mt-2')
     bidButton.innerText = 'Bid'
     bidForm.setAttribute('id', 'bidForm')
+    bidForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+      addBid(post.id, bidInput.value)
+    })
     bidForm.append(bidLabel, bidInput, bidButton)
     textDiv.append(bidForm)
   }
