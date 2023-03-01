@@ -188,6 +188,9 @@ body {
 .card-body {
   img {
     height: 150px;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1000px) {
