@@ -8,7 +8,14 @@ export function CardsPost(post) {
   const card_footer_bid = document.createElement('p')
   const card_footer_time = document.createElement('p')
   const card_footer_button = document.createElement('a')
-  card.classList.add('card')
+  card.classList.add(
+    'card',
+    'display',
+    'flex',
+    'flex-column',
+    'h-100',
+    'overflow-hidden'
+  )
   card_body.classList.add('card-body')
   card_media.classList.add('card-image', 'ratio', 'ratio-16x9')
   card_footer.classList.add(
@@ -20,7 +27,7 @@ export function CardsPost(post) {
   card_footer_button.classList.add('btn', 'btn-primary')
   card_title.innerText = post.title
   card_media.src = post.media[0]
-  card_footer_bid.innerText = post._count.bids
+  card_footer_bid.innerText = 'bids: ' + post._count.bids
   card_footer_time.innerText = post.endsAt
   card_footer_button.innerText = 'Bid'
   card_footer_button.href = `../../../pages/product.html?id=${post.id}`

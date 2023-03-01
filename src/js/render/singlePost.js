@@ -2,7 +2,8 @@ import storage from '../storage/index.js'
 import { deletePost } from '../api/posts/deletePost.js'
 import { createEditForm } from './createEditForm.js'
 import { addBid } from '../api/posts/addBid.js'
-
+import { countdown } from './countdown.js'
+//
 export function singlePost(post) {
   console.log(post)
   let bids = post.bids
@@ -16,11 +17,17 @@ export function singlePost(post) {
   const imgDiv = document.createElement('div')
   const textDiv = document.createElement('div')
   const title = document.createElement('h1')
+  const timeLeftContainer = document.createElement('p')
   const description = document.createElement('p')
   const seller = document.createElement('p')
   const user = storage.load('user')
 
   const bidTitle = document.createElement('h3')
+
+  // timeleft calculation
+  countdown(post.endsAt, timeLeftContainer)
+  timeLeftContainer.setAttribute('id', 'timeLeft')
+
   for (let i = 0; i < post.media.length; i++) {
     const img = document.createElement('img')
     if (i === 0) {
@@ -62,7 +69,7 @@ export function singlePost(post) {
   description.innerText = post.description
   seller.innerText = 'seller: ' + post.seller.name
   bidsContainer.prepend(bidTitle)
-  textDiv.append(title, description, seller)
+  textDiv.append(title, description, seller, timeLeftContainer)
   if (post.seller.name === user.name) {
     console.log('seller')
     const editButton = document.createElement('button')
