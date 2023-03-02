@@ -185,6 +185,11 @@ body {
   border: 2px solid $color-primary;
   margin: 1em 0;
 }
+.card-footer * {
+  background-color: $color-secondary;
+  // border: 1px solid $color-primary;
+  width: 100%;
+}
 .card-body {
   img {
     height: 150px;

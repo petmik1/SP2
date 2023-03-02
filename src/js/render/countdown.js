@@ -24,7 +24,15 @@ export function countdown(endsAt, timeLeftContainer) {
 
       // Display the result in the element with id="demo"
       const result =
-        days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's '
+        'time left: ' +
+        days +
+        'd ' +
+        hours +
+        'h ' +
+        minutes +
+        'm ' +
+        seconds +
+        's '
       timeLeftContainer.innerText = result
       //   return result;
       // If the count down is finished, write some text
