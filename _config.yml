@@ -1,7 +1,0 @@
-title: SP2
-url: http://petmik1.github.io
-baseurl: /sp2.petter-mikalsen
-
-page_gen-dirs: true
-kramdown:
- parse_block_html: true

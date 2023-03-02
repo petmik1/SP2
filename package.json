@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/petmik1/SP2/issues"
   },
-  "homepage": "http://sp2.petter-mikalsen.site/",
+  "homepage": "http://sp2.petter-mikalsen.site",
   "devDependencies": {
     "@compodoc/live-server": "^1.2.3",
     "concurrently": "^7.6.0",
