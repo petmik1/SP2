@@ -9,8 +9,9 @@ export function CardsPost(post) {
   const card_footer = document.createElement('div')
   const card_footer_bid = document.createElement('p')
   const card_footer_time = document.createElement('p')
+  const card_footer_button_div = document.createElement('div')
   const card_footer_button = document.createElement('a')
-  console.log(post)
+
   countdown(post.endsAt, card_footer_time)
   card.classList.add(
     'card',
@@ -24,22 +25,22 @@ export function CardsPost(post) {
   card_media.classList.add('card-image', 'ratio', 'ratio-16x9')
   card_footer.classList.add(
     'card-footer',
-    'p-0'
-    // 'd-flex',
-    // 'flex-column',
-
-    // 'justify-content-between',
-    // 'align-items-center'
+    'p-0',
+    'mx-auto',
+    'd-flex',
+    'flex-column'
   )
-  card_footer_button.classList.add('btn', 'btn-primary')
+  card_footer_button_div.classList.add('d-flex', 'justify-content-center')
+  card_footer_button.classList.add('btn', 'btn-primary', 'w-75')
   card_title.innerText = post.title
   card_media.src = post.media[0]
   card_footer_bid.innerText = 'bids: ' + post._count.bids
 
   card_footer_button.innerText = 'more'
   card_footer_button.href = `../../../pages/product.html?id=${post.id}`
+  card_footer_button_div.append(card_footer_button)
   card_body.append(card_title, card_media)
-  card_footer.append(card_footer_bid, card_footer_time, card_footer_button)
+  card_footer.append(card_footer_bid, card_footer_time, card_footer_button_div)
   card.append(card_body, card_footer)
   cards.append(card)
 }

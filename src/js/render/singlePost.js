@@ -70,6 +70,7 @@ export function singlePost(post) {
   seller.innerText = 'seller: ' + post.seller.name
   bidsContainer.prepend(bidTitle)
   textDiv.append(title, description, seller, timeLeftContainer)
+  console.log(user.name)
   if (post.seller.name === user.name) {
     console.log('seller')
     const editButton = document.createElement('button')

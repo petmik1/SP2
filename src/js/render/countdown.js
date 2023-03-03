@@ -11,7 +11,7 @@ export function countdown(endsAt, timeLeftContainer) {
     const distance = countDownDate - now
     if (distance < 0) {
       clearInterval(x)
-      timeLeftContainer.innerText = 'EXPIRED'
+      timeLeftContainer.innerText = 'Time left: EXPIRED'
     } else {
       // Time calculations for days, hours, minutes and seconds
       const days = Math.floor(distance / (1000 * 60 * 60 * 24))
@@ -34,8 +34,6 @@ export function countdown(endsAt, timeLeftContainer) {
         seconds +
         's '
       timeLeftContainer.innerText = result
-      //   return result;
-      // If the count down is finished, write some text
     }
   }, 1000)
 }

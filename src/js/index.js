@@ -32,6 +32,7 @@ if (token) {
   document.querySelector('#logoutButton').style.display = 'block'
 } else {
   document.querySelector('#logoutButton').style.display = 'none'
+  document.querySelector('#nav_profile_link').style.display = 'none'
 }
 // logout
 document.querySelector('#logoutButton').addEventListener('click', () => {

@@ -16,6 +16,9 @@ const formAvatar = document.querySelector('#changeAvatar')
 const user = storage.load('user')
 
 export async function eventProfile() {
+  if (!user) {
+    location.href = '/pages/login.html'
+  }
   profileUserInfo(user)
   let result = await usersListings(user.name)
   CardsPosts(result)
