@@ -40,6 +40,7 @@ label {
 }
 p {
   @include font-tertiary();
+  margin: 0;
 }
 
 body {
@@ -185,10 +186,14 @@ body {
   border: 2px solid $color-primary;
   margin: 1em 0;
 }
-.card-footer * {
+.card-footer {
   background-color: $color-secondary;
-  // border: 1px solid $color-primary;
   width: 100%;
+}
+.card-footer > * {
+  color: $color-primary;
+  border-top: solid 2px $color-primary;
+  padding: 0.3em 1em;
 }
 .card-body {
   img {
@@ -198,7 +203,7 @@ body {
     margin: 0 auto;
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .cards {
     display: flex;
     flex-wrap: wrap;
