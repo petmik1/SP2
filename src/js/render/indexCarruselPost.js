@@ -27,6 +27,7 @@ export function indexCarruselPost(post, i) {
   countdown(post.endsAt, timeLeft)
   current_bid.innerText = 'Bids: ' + post._count.bids
   timeLeft.innerText = post.endsAt
+  bid.href = `../../../pages/product.html?id=${post.id}`
   bid.innerText = 'More'
 
   media.src = post.media[0]
