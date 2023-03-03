@@ -7,7 +7,6 @@ export function CardsPost(post) {
   const card_title = document.createElement('h5')
   const card_media = document.createElement('img')
   const card_footer = document.createElement('div')
-  const card_footer_bid = document.createElement('p')
   const card_footer_time = document.createElement('p')
   const card_footer_button_div = document.createElement('div')
   const card_footer_button = document.createElement('a')
@@ -34,13 +33,18 @@ export function CardsPost(post) {
   card_footer_button.classList.add('btn', 'btn-primary', 'w-75')
   card_title.innerText = post.title
   card_media.src = post.media[0]
-  card_footer_bid.innerText = 'bids: ' + post._count.bids
+
+  if (post._count !== undefined) {
+    const card_footer_bid = document.createElement('p')
+    card_footer_bid.innerText = 'bids: ' + post._count.bids
+    card_footer.append(card_footer_bid)
+  }
 
   card_footer_button.innerText = 'more'
   card_footer_button.href = `../../../pages/product.html?id=${post.id}`
   card_footer_button_div.append(card_footer_button)
   card_body.append(card_title, card_media)
-  card_footer.append(card_footer_bid, card_footer_time, card_footer_button_div)
+  card_footer.append(card_footer_time, card_footer_button_div)
   card.append(card_body, card_footer)
   cards.append(card)
 }

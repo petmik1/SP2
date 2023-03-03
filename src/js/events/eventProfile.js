@@ -3,6 +3,7 @@ import { profileUserInfo } from '../render/profileUserInfo.js'
 import { usersListings } from '../api/profiles/usersListings.js'
 import { usersBids } from '../api/profiles/userBids.js'
 import { CardsPosts } from '../render/CardsPosts.js'
+import { CardsPost } from '../render/CardsPost.js'
 import { createPost } from '../api/posts/createPost.js'
 import { changeAvatar } from '../api/profiles/changeAvatar.js'
 
@@ -40,7 +41,6 @@ export async function eventProfile() {
 
   createPostForm.addEventListener('submit', async (event) => {
     event.preventDefault()
-    console.log('submit')
     result = await createPost(
       createPostForm.title.value,
       createPostForm.endsAt.value,
@@ -58,6 +58,8 @@ export async function eventProfile() {
   yourBids.addEventListener('click', async () => {
     cards.innerHTML = ''
     result = await usersBids(user.name)
-    CardsPosts(result)
+    result.forEach((element) => {
+      CardsPost(element.listing)
+    })
   })
 }
