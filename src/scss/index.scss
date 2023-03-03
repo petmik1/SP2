@@ -149,33 +149,31 @@ body {
 }
 
 // carrousel
-.carousel-inner {
-  height: 200px;
-  overflow: hidden;
+#carousel > * {
+  position: static;
 }
-.carousel-image {
-  max-height: 150px;
+
+.carousel-inner {
+  display: flex;
 }
 .carousel-control-next,
 .carousel-control-prev {
   color: $color-primary;
 }
-
-.carousel-caption {
-  position: relative;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 30px;
+.carousel-inner > .carousel-item > img {
+  height: 200px;
+  // width: 200px;
+  object-fit: cover;
+  border: 2px solid $color-primary;
+  border-bottom: 0;
 }
-.carousel-caption * {
+.carousel-caption {
+  border: 2px solid $color-primary;
+  position: static;
+}
+.carousel-caption > * {
   color: $color-primary;
-  border: solid 1px $color-primary;
-  height: 30px;
-  width: 100px;
+  flex: 1;
 }
 // cards
 .cards {
