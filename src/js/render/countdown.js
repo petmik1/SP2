@@ -20,7 +20,6 @@ export function countdown(endsAt, timeLeftContainer) {
       )
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((distance % (1000 * 60)) / 1000)
-      // console.log(days, hours, minutes, seconds)
 
       // Display the result in the element with id="demo"
       const result =

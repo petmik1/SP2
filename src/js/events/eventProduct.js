@@ -11,11 +11,7 @@ export async function eventProduct() {
   singlePost(result)
   editForm.addEventListener('submit', async (event) => {
     event.preventDefault()
-    console.log(
-      editForm.title.value,
-      editForm.description.value,
-      editForm.image.value
-    )
+
     await editPost(
       id,
       editForm.title.value,
