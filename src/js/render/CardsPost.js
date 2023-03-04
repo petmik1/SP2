@@ -16,14 +16,7 @@ export function CardsPost(post) {
   countdown(post.endsAt, card_footer_time)
 
   // adding classes
-  card.classList.add(
-    'card',
-    'display',
-    'flex',
-    'flex-column',
-    'h-100',
-    'overflow-hidden'
-  )
+  card.classList.add('card')
   card_body.classList.add('card-body')
   card_media.classList.add('card-image', 'ratio', 'ratio-16x9')
   card_footer.classList.add(
