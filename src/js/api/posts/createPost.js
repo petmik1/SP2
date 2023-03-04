@@ -2,7 +2,9 @@ import { headers } from '../headers.js'
 import { apiPath } from '../constants.js'
 
 export async function createPost(title, endsAt, description, image) {
-  let post = { title, endsAt, description, image }
+  const media = [image]
+  let post = { title, endsAt, description, media }
+  console.log(post)
   post = JSON.stringify(post)
 
   const response = await fetch(`${apiPath}listings`, {

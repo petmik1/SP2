@@ -2,7 +2,14 @@ import { headers } from '../headers.js'
 import { apiPath } from '../constants.js'
 
 export async function editPost(id, title, description, image) {
-  let post = { title, description, image }
+  console.log(image)
+  let post
+  if (image === '') {
+    post = { title, description, media: [] }
+  } else {
+    const media = [image]
+    post = { title, description, media }
+  }
   post = JSON.stringify(post)
 
   const response = await fetch(`${apiPath}listings/${id}`, {

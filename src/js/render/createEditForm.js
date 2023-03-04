@@ -6,7 +6,7 @@ export function createEditForm(post) {
     form.classList.add('mx-auto', 'my-5')
     form.title.value = post.title
     form.description.value = post.description
-    if (post.media.length < 0) {
+    if (post.media.length > 0) {
       form.image.value = post.media[0]
     }
     return form
