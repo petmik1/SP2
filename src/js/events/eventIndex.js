@@ -19,7 +19,6 @@ export async function eventIndex() {
     const active = form.active.value
     const cards = document.querySelector('.cards')
     cards.innerHTML = ''
-    console.log(100, sortBy, sortOrder, active)
     const cardsData = await getPosts(100, sortBy, sortOrder, active)
     CardsPosts(cardsData)
   })

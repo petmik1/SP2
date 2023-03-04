@@ -5,7 +5,6 @@ import { addBid } from '../api/posts/addBid.js'
 import { countdown } from './countdown.js'
 //
 export function singlePost(post) {
-  console.log(post)
   let bids = post.bids
   bids.sort((a, b) => {
     return a.amount - b.amount
@@ -70,9 +69,7 @@ export function singlePost(post) {
   seller.innerText = 'seller: ' + post.seller.name
   bidsContainer.prepend(bidTitle)
   textDiv.append(title, description, seller, timeLeftContainer)
-  console.log(user.name)
   if (post.seller.name === user.name) {
-    console.log('seller')
     const editButton = document.createElement('button')
     const deleteButton = document.createElement('button')
     editButton.classList.add('btn', 'btn-primary', 'mx-2')
