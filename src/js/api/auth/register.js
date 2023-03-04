@@ -11,7 +11,9 @@ export async function register(name, email, password, avatar) {
     headers: headers('application/json'),
   })
   if (response.ok) {
+    location.href = '/pages/login.html'
     return await response.json()
+  } else {
+    throw new Error(response.statusText)
   }
-  throw new Error(response.statusText)
 }
