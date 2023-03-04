@@ -2,18 +2,25 @@ import { headers } from '../headers.js'
 import { apiPath } from '../constants.js'
 
 export async function createPost(title, endsAt, description, image) {
-  const media = [image]
-  let post = { title, endsAt, description, media }
-  console.log(post)
+  // creating object with post data
+  let post
+  if (image === '') {
+    post = { title, endsAt, description, media: [] }
+  } else {
+    const media = [image]
+    post = { title, endsAt, description, media }
+  }
   post = JSON.stringify(post)
-
+  // sending post data to api
   const response = await fetch(`${apiPath}listings`, {
     method: 'POST',
     body: post,
     headers: headers('application/json'),
   })
   if (response.ok) {
+    // returning response
     location.reload()
+  } else {
+    throw new Error(response.statusText)
   }
-  throw new Error(response.statusText)
 }
