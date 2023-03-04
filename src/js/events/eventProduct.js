@@ -2,6 +2,11 @@ import { getPost } from '../api/posts/getPost.js'
 import { singlePost } from '../render/singlePost.js'
 import { editPost } from '../api/posts/editPost.js'
 export async function eventProduct() {
+  // chcecking if user is logged in
+  if (!localStorage.getItem('token')) {
+    location.href = '/pages/login.html'
+  }
+
   // getting elements
   const editForm = document.querySelector('#editPost')
   const querystring = window.location.search
