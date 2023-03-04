@@ -132,7 +132,67 @@
           </div>
         </div>
       </section>
-      <section class="cards mx-auto"></section>
+      <section class="mx-auto w-75">
+        <form id="filters" class="d-sm-flex justify-content-around text-center">
+          <div class="">
+            <h3>sort order</h3>
+            <div>
+              <label for="asc">ascending</label>
+              <input
+                type="radio"
+                name="sortOrder"
+                checked
+                value="asc"
+                id="asc"
+              />
+            </div>
+            <div>
+              <label for="desc">descending</label>
+              <input type="radio" name="sortOrder" value="desc" id="desc" />
+            </div>
+          </div>
+          <div>
+            <h3>Sort by</h3>
+            <div>
+              <label for="created">Created</label>
+              <input
+                type="radio"
+                name="sortBy"
+                checked
+                value="created"
+                id="created"
+              />
+            </div>
+            <div>
+              <label for="endsAt">Ends at</label>
+              <input type="radio" name="sortBy" value="endsAt" id="endsAt" />
+            </div>
+            <div>
+              <label for="title">Title</label>
+              <input type="radio" name="sortBy" value="title" id="title" />
+            </div>
+          </div>
+          <div>
+            <h3>active</h3>
+            <div>
+              <label for="all">All</label>
+              <input
+                type="radio"
+                name="active"
+                checked
+                value="false"
+                id="all"
+              />
+            </div>
+            <div>
+              <label for="active">Active</label>
+              <input type="radio" name="active" value="true" id="active" />
+            </div>
+          </div>
+        </form>
+
+        <div class="cards mx-auto"></div>
+      </section>
     </body>
     <footer class="footer fixed-bottom d-flex justify-content-center">
       <i class="fa-brands fa-facebook-f m-2 footer_icon"></i>
