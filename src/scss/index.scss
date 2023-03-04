@@ -162,8 +162,8 @@ body {
 }
 .carousel-inner > .carousel-item > img {
   height: 200px;
-  // width: 200px;
-  object-fit: cover;
+  width: 100%;
+  // object-fit: cover;
   border: 2px solid $color-primary;
   border-bottom: 0;
 }
@@ -175,6 +175,7 @@ body {
   color: $color-primary;
   flex: 1;
 }
+
 // cards
 .cards {
   width: 90%;
