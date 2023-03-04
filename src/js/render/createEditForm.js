@@ -1,6 +1,7 @@
 export function createEditForm(post) {
+  // getting elements
   const form = document.querySelector('#editPost')
-
+  // if the form is not visible, show it
   if (form.style.display !== 'flex') {
     form.style.display = 'flex'
     form.classList.add('mx-auto', 'my-5')
@@ -10,7 +11,9 @@ export function createEditForm(post) {
       form.image.value = post.media[0]
     }
     return form
-  } else {
+  }
+  // removing the form if it is visible
+  else {
     form.style.display = 'none'
     return form
   }

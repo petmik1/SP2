@@ -4,10 +4,10 @@ export function countdown(endsAt, timeLeftContainer) {
 
   // Update the count down every 1 second
   const x = setInterval(function () {
-    // Get today's date and time
+    // Getting today's date and time
     const now = new Date().getTime()
 
-    // Find the distance between now and the count down date
+    // Find the diffrence between now and the count down date
     const distance = countDownDate - now
     if (distance < 0) {
       clearInterval(x)
@@ -21,7 +21,7 @@ export function countdown(endsAt, timeLeftContainer) {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
       const seconds = Math.floor((distance % (1000 * 60)) / 1000)
 
-      // Display the result in the element with id="demo"
+      // create result
       const result =
         'time left: ' +
         days +

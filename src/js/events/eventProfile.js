@@ -7,6 +7,7 @@ import { CardsPost } from '../render/CardsPost.js'
 import { createPost } from '../api/posts/createPost.js'
 import { changeAvatar } from '../api/profiles/changeAvatar.js'
 
+// getting elements
 const yourListings = document.querySelector('#yourListings')
 const yourBids = document.querySelector('#yourBids')
 const createListingBtn = document.querySelector('#createListingBtn')
@@ -17,9 +18,11 @@ const formAvatar = document.querySelector('#changeAvatar')
 const user = storage.load('user')
 
 export async function eventProfile() {
+  // redirecting to login page if user is not logged in
   if (!user) {
     location.href = '/pages/login.html'
   }
+  // rendering user info
   profileUserInfo(user)
   let result = await usersListings(user.name)
   CardsPosts(result)

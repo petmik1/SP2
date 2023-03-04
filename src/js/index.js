@@ -5,6 +5,7 @@ import { eventProfile } from './events/eventProfile.js'
 import { eventProduct } from './events/eventProduct.js'
 import storage from './storage/index.js'
 
+// specific page script
 switch (location.pathname) {
   case '/' || '/index.html':
     await eventIndex()
