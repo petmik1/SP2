@@ -47,6 +47,7 @@ body {
   background-color: $color-secondary;
 }
 
+// navbar
 .navbar,
 .footer {
   background-color: $color-primary;
@@ -73,6 +74,8 @@ body {
     font-size: 1.8em;
   }
 }
+
+// buttons
 .btn {
   color: $color-primary;
   font-weight: 900;
@@ -89,7 +92,14 @@ body {
 }
 .btn:hover {
   opacity: 80%;
+  color: $color-primary;
 }
+.btn-primary:hover {
+  opacity: 80%;
+  background-color: $color-CTA;
+}
+
+// forms
 .form {
   max-width: 500px;
   input,
@@ -177,11 +187,6 @@ body {
 }
 
 // cards
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .card {
   background-color: $color-secondary;
   border: 2px solid $color-primary;
@@ -204,7 +209,9 @@ body {
     margin: 0 auto;
   }
 }
-
+.cards {
+  margin: 0 auto;
+}
 @media (min-width: 768px) {
   .cards {
     display: grid;
