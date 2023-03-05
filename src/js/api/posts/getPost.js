@@ -8,6 +8,14 @@ export async function getPost(id) {
     { headers: headers() }
   )
   const data = await response.json()
-  // returning data
-  return await data
+  if (response.ok) {
+    // returning data
+    return await data
+  } else {
+    const apiFailure = (document.createElement('p').innerHTML =
+      "Couldn't connect to the server: " + response.statusText)
+    const body = document.querySelector('body')
+    body.append(apiFailure)
+    throw new Error(response.statusText)
+  }
 }

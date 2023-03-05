@@ -21,6 +21,10 @@ export async function createPost(title, endsAt, description, image) {
     // returning response
     location.reload()
   } else {
+    const apiFailure = (document.createElement('p').innerHTML =
+      "Couldn't connect to the server: " + response.statusText)
+    const body = document.querySelector('body')
+    body.append(apiFailure)
     throw new Error(response.statusText)
   }
 }

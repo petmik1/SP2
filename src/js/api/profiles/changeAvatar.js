@@ -18,6 +18,10 @@ export async function changeAvatar(image, name) {
     storage.save('user', response)
     return await response.json()
   } else {
+    const apiFailure = (document.createElement('p').innerHTML =
+      "Couldn't connect to the server: " + response.statusText)
+    const body = document.querySelector('body')
+    body.append(apiFailure)
     throw new Error(response.statusText)
   }
 }

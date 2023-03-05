@@ -19,6 +19,10 @@ export async function addBid(id, bid) {
     // reloading page if response is ok
     location.reload()
   } else {
+    const apiFailure = (document.createElement('p').innerHTML =
+      "Couldn't connect to the server: " + response.statusText)
+    const body = document.querySelector('body')
+    body.append(apiFailure)
     throw new Error(response.statusText)
   }
 }
