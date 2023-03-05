@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./dist/css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iez2rur.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iez2rur.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/321709e282.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/js/index.js" defer type="module"></script>
+    <title>BBB - HOME</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg flex-lg-column-reverse">
+      <div class="container-fluid d-flex w-75">
+        <img class="navbar-brand" src="assets/img/logoSP2.png" alt="" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-sharp fa-solid fa-bars navbar_bars"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse flex-grow-1 text-right"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-auto flex-nowrap">
+            <li class="nav-item text-center">
+              <a href="" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item text-center">
+              <a href="./pages/login.html" class="nav-link" id="loginButton"
+                >login</a
+              >
+            </li>
+            <li class="nav-item text-center">
+              <a href="./pages/login.html" class="nav-link" id="logoutButton"
+                >logout</a
+              >
+            </li>
+            <li class="nav-item text-center">
+              <a
+                class="nav-link"
+                id="nav_profile_link"
+                href="./pages/profile.html"
+                ><i class="fa-solid fa-user m-1"></i>profile</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <body class="mb-5">
+      <section class="w-75 mx-auto mt-2">
+        <h2>last chance</h2>
+
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="d-flex">
+            <button
+              class="carousel-control-prev position-relative"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <div class="carousel-inner d-flex"></div>
+            <button
+              class="carousel-control-next position-relative"
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <div class="carousel-indicators position-static zn-1">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="3"
+              aria-label="Slide 4"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="4"
+              aria-label="Slide 5"
+            ></button>
+          </div>
+        </div>
+      </section>
+      <section class="mx-auto w-75">
+        <form id="filters" class="d-sm-flex justify-content-around text-center">
+          <div class="">
+            <h3>sort order</h3>
+            <div>
+              <label for="asc">ascending</label>
+              <input type="radio" name="sortOrder" value="asc" id="asc" />
+            </div>
+            <div>
+              <label for="desc">descending</label>
+              <input
+                type="radio"
+                name="sortOrder"
+                value="desc"
+                checked
+                id="desc"
+              />
+            </div>
+          </div>
+          <div>
+            <h3>Sort by</h3>
+            <div>
+              <label for="created">Created</label>
+              <input
+                type="radio"
+                name="sortBy"
+                checked
+                value="created"
+                id="created"
+              />
+            </div>
+            <div>
+              <label for="endsAt">Ends at</label>
+              <input type="radio" name="sortBy" value="endsAt" id="endsAt" />
+            </div>
+            <div>
+              <label for="title">Title</label>
+              <input type="radio" name="sortBy" value="title" id="title" />
+            </div>
+          </div>
+          <div>
+            <h3>active</h3>
+            <div>
+              <label for="all">All</label>
+              <input
+                type="radio"
+                name="active"
+                checked
+                value="false"
+                id="all"
+              />
+            </div>
+            <div>
+              <label for="active">Active</label>
+              <input type="radio" name="active" value="true" id="active" />
+            </div>
+          </div>
+        </form>
+
+        <div class="cards"></div>
+      </section>
+    </body>
+    <footer class="footer fixed-bottom d-flex justify-content-center">
+      <i class="fa-brands fa-facebook-f m-2 footer_icon"></i>
+      <i class="fa-solid fa-phone m-2 footer_icon"></i>
+    </footer>
+  </body>
+</html>

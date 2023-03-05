@@ -1,0 +1,241 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+// colors
+$color-primary: #3a4b5e !default;
+$color-secondary: #e4e5ed !default;
+$color-tertiary: #0090f0 !default;
+$color-CTA: #00db33 !default;
+$color-danger: #fa0a01 !default;
+
+// fonts
+@mixin font-primary() {
+  font-family: 'pilsner', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+@mixin font-secondary() {
+  font-family: 'pilsner', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin font-tertiary() {
+  font-family: 'massilia', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  color: $color-primary;
+}
+h1 {
+  @include font-primary();
+}
+h2,
+h3,
+h4,
+h5,
+a,
+label {
+  @include font-secondary();
+}
+p {
+  @include font-tertiary();
+  margin: 0;
+}
+
+body {
+  background-color: $color-secondary;
+}
+
+// navbar
+.navbar,
+.footer {
+  background-color: $color-primary;
+
+  * {
+    color: $color-secondary !important;
+    border: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+  }
+  .nav-item:hover {
+    opacity: 80%;
+  }
+  .active {
+    text-decoration: underline;
+  }
+  .navbar-brand {
+    width: 75px;
+  }
+  .navbar_bars {
+    font-size: 2em;
+  }
+  .footer_icon {
+    font-size: 1.8em;
+  }
+}
+
+// buttons
+.btn {
+  color: $color-primary;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.btn-primary {
+  background-color: $color-CTA;
+  border: none;
+}
+.btn-danger {
+  background-color: $color-danger;
+  border: none;
+  color: $color-secondary;
+}
+.btn:hover {
+  opacity: 80%;
+  color: $color-primary;
+}
+.btn-primary:hover {
+  opacity: 80%;
+  background-color: $color-CTA;
+}
+
+// forms
+.form {
+  max-width: 500px;
+  input,
+  textarea {
+    background-color: $color-secondary;
+    border: 1px solid $color-primary;
+  }
+  input:focus,
+  textarea:focus {
+    background-color: $color-secondary;
+  }
+
+  label {
+    font-size: 1.3em;
+  }
+}
+.link {
+  @include font-primary();
+  color: $color-tertiary;
+}
+
+// profile
+.profile {
+  .avatar {
+    width: 100px;
+    height: 100px;
+    border: 2px solid $color-primary;
+    border-radius: 100%;
+    #profileIcon {
+      font-size: 6em;
+    }
+  }
+
+  .profile_buttons {
+    text-transform: uppercase;
+    .active {
+      text-decoration: underline;
+    }
+  }
+  .profile_buttons *:hover {
+    opacity: 80%;
+    cursor: pointer;
+  }
+  #cogwheel {
+    font-size: 1.5em;
+  }
+  #cogwheel:hover {
+    opacity: 80%;
+    cursor: pointer;
+  }
+  #changeAvatar {
+    display: none;
+  }
+}
+#createPost {
+  display: none;
+}
+
+// carrousel
+#carousel > * {
+  position: static;
+}
+
+.carousel-inner {
+  display: flex;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  color: $color-primary;
+}
+.carousel-inner > .carousel-item > img {
+  height: 200px;
+  width: 100%;
+  // object-fit: cover;
+  border: 2px solid $color-primary;
+  border-bottom: 0;
+}
+.carousel-caption {
+  border: 2px solid $color-primary;
+  position: static;
+}
+.carousel-caption > * {
+  color: $color-primary;
+  flex: 1;
+}
+
+// cards
+.card {
+  background-color: $color-secondary;
+  border: 2px solid $color-primary;
+  margin: 1em 0;
+}
+.card-footer {
+  background-color: $color-secondary;
+  width: 100%;
+}
+.card-footer > * {
+  color: $color-primary;
+  border-top: solid 2px $color-primary;
+  padding: 0.3em 1em;
+}
+.card-body {
+  img {
+    height: 150px;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+.cards {
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+  }
+}
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+// singlePost
+.leader {
+  text-decoration: underline;
+  font-size: 1.3em;
+}
+#editPost {
+  display: none;
+  flex-direction: column;
+}

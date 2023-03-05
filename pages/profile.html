@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/css/index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iez2rur.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iez2rur.css" />
+    <script
+      src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/321709e282.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../src/js/index.js" defer type="module"></script>
+    <title>BBB - profile</title>
+  </head>
+  <body>
+    <nav class="navbar sticky-top navbar-expand-lg flex-lg-column-reverse">
+      <div class="container-fluid d-flex w-75">
+        <img class="navbar-brand" src="../assets/img/logoSP2.png" alt="" />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-sharp fa-solid fa-bars navbar_bars"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse flex-grow-1 text-right"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-auto flex-nowrap">
+            <li class="nav-item text-center">
+              <a href="/ " class="nav-link">Home</a>
+            </li>
+            <li class="nav-item text-center">
+              <a href="./login.html" class="nav-link" id="loginButton">login</a>
+            </li>
+            <li class="nav-item text-center">
+              <a href="./login.html" class="nav-link" id="logoutButton"
+                >logout</a
+              >
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link active" id="nav_profile_link" href=""
+                ><i class="fa-solid fa-user m-1"></i>profile</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <body class="mb-5">
+      <div
+        class="profile container d-flex align-items-center justify-content-center flex-column mt-5"
+      >
+        <div id="cogwheel" class="w-25 d-flex justify-content-end">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+        <form id="changeAvatar" class="flex-column form mt-3">
+          <label for="inputAvatar" class="form-label">avatar</label>
+          <input
+            type="url"
+            name="avatar"
+            class="form-control"
+            id="inputAvatar"
+            placeholder="www.validurl.com"
+            required
+          />
+          <button type="submit" class="my-3 btn btn btn-primary">
+            change avartar
+          </button>
+        </form>
+        <div
+          class="avatar d-flex justify-content-center align-content-center overflow-hidden"
+          id="avatar"
+        ></div>
+        <div
+          class="d-flex align-items-center justify-content-center flex-column"
+        >
+          <h1 id="name">name</h1>
+          <h2 class="" id="credits">credits:</h2>
+          <button class="btn form btn-primary" id="createListingBtn">
+            create listing
+          </button>
+          <form id="createPost" class="form flex-column">
+            <label for="title" class="form-label">title</label>
+            <input type="text" required class="form-control" name="title" />
+            <label for="description" class="form-label">description</label>
+            <textarea
+              name="description"
+              class="form-control"
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <label for="image" class="form-label">image</label>
+            <input type="url" name="image" class="form-control" id="image" />
+            <label for="endsAt" class="form-label">ends at</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              required
+              name="endsAt"
+              id="endsAt"
+            />
+            <button type="submit" class="btn btn-primary w-100 mt-3">
+              create
+            </button>
+          </form>
+        </div>
+        <div class="profile_buttons d-flex justify-content-center w-100">
+          <div>
+            <h3 class="mx-3 active" id="yourListings">your listings</h3>
+          </div>
+          <div>
+            <h3 class="mx-3" id="yourBids">your bids</h3>
+          </div>
+        </div>
+        <div class="cards"></div>
+      </div>
+    </body>
+    <footer class="footer fixed-bottom d-flex justify-content-center">
+      <i class="fa-brands fa-facebook-f m-2 footer_icon"></i>
+      <i class="fa-solid fa-phone m-2 footer_icon"></i>
+    </footer>
+  </body>
+</html>

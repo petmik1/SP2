@@ -1,0 +1,57 @@
+{
+  "name": "sp2",
+  "version": "0.2.0",
+  "description": "auction application for semester project",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "sass src/scss:dist/css",
+    "start": "concurrently \"sass --watch src/scss:dist/css\" \"live-server\"",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "format": "prettier -w src/**/*.js",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petmik1/SP2.git"
+  },
+  "keywords": [
+    "css",
+    "html",
+    "js",
+    "portfolio"
+  ],
+  "author": "petmik1 <petter.mikalsen.pehm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/petmik1/SP2/issues"
+  },
+  "homepage": "https://sp2.petter-mikalsen.site",
+  "devDependencies": {
+    "@compodoc/live-server": "^1.2.3",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard": "^17.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "sass": "^1.58.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
+}
